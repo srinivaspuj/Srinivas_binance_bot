@@ -20,7 +20,7 @@ API_KEY = os.getenv("BINANCE_API_KEY")
 API_SECRET = os.getenv("BINANCE_API_SECRET")
 
 def main():
-    print("\n Welcome to Srinivas Binance Bot ")
+    print("\n Welcome to Srinivas Crypto Trading Bot ")
 
     while True:
         print("\nSelect an option:")
