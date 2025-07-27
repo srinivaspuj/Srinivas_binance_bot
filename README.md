@@ -1,4 +1,4 @@
-# 💹 Binance Testnet Trading Bot (KPA Backend Assignment)
+# 💹 Binance Testnet Trading Bot 
 
 This project is a real-time, modular, and CLI-based trading bot built to interact with the **Binance Testnet API**. It supports multiple order types, strategies, and a basic user interface. The project is structured and written for IT industry-level backend development.
 
