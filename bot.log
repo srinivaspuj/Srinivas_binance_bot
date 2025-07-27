@@ -1,0 +1,7 @@
+2025-07-27 14:55:55,740 ERROR:Error placing market BUY order: APIError(code=-2015): Invalid API-key, IP, or permissions for action.
+2025-07-27 14:56:27,144 ERROR:Error placing market BUY order: APIError(code=-2015): Invalid API-key, IP, or permissions for action.
+2025-07-27 14:57:01,923 ERROR:Error placing market BUY order: APIError(code=-2015): Invalid API-key, IP, or permissions for action.
+2025-07-27 17:14:08,134 ERROR:Error placing market BUY order: APIError(code=-2015): Invalid API-key, IP, or permissions for action.
+2025-07-27 18:33:55,003 ERROR:Error placing market BUY order: APIError(code=-1100): Illegal characters found in parameter 'quantity'; legal range is '^([0-9]{1,20})(\.[0-9]{1,20})?$'.
+2025-07-27 18:34:58,136 ERROR:Error placing market BUY order: APIError(code=-2015): Invalid API-key, IP, or permissions for action.
+2025-07-27 18:58:10,313 ERROR:Error placing market BUY order: APIError(code=-2015): Invalid API-key, IP, or permissions for action.

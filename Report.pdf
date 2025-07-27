@@ -1,0 +1,79 @@
+📘 Binance Trading Strategies Report
+Project Structure:
+
+bash
+Copy
+Edit
+Srinivas_binance_bot/
+│
+├── src/
+│   ├── market_orders.py
+│   ├── limit_orders.py
+│   └── advanced/
+│       ├── oco.py
+│       └── twap.py
+│
+├── .env                # API keys
+├── bot.log             # Logs will go here
+├── README.md           # Setup + Usage Instructions
+└── report.pdf          # Screenshots, analysis, etc.
+
+
+✅ Included Strategies
+
+1. market_orders.py
+Places real-time buy and sell market orders.
+
+Example:
+
+python
+Copy
+Edit
+place_market_buy("BTCUSDT", 0.001)
+2. limit_orders.py
+Executes limit buy/sell at specified prices.
+
+Example:
+
+python
+Copy
+Edit
+place_limit_buy("BTCUSDT", 0.001, 25000)
+3. advanced/oco.py
+Executes a One Cancels the Other (OCO) trade.
+
+Automatically manages target + stop-loss together.
+
+Example:
+
+python
+Copy
+Edit
+place_oco_order("BTCUSDT", 0.001, 28000, 24000, 23500)
+4. advanced/twap.py
+Runs Time-Weighted Average Price (TWAP) trades.
+
+Breaks large order into multiple time-based chunks.
+
+Example:
+
+python
+Copy
+Edit
+execute_twap("BTCUSDT", 0.01, 5, 10)
+🔐 .env
+Your API credentials should be stored here:
+
+ini
+Copy
+Edit
+BINANCE_API_KEY=your_key
+BINANCE_API_SECRET=your_secret
+🛠️ README.md
+Setup instructions include:
+
+Python 3.10+
+
+pip install python-binance python-dotenv
+
+Run using python src/market_orders.py etc.
