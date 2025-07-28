@@ -1,4 +1,4 @@
-# Binance Futures Order Bot
+# Srinivas Binance Bot
 
 A CLI-based trading bot for Binance USDT-M Futures, designed to execute multiple order types with robust input validation and logging. This bot supports market and limit orders (mandatory) and advanced orders including OCO, TWAP, and grid orders (bonus features). It uses the Binance Testnet for all API interactions.
 
