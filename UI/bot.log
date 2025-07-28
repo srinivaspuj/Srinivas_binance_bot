@@ -1,60 +1,7 @@
-2025-07-27 21:26:01,123 - INFO - BinanceBot initialized successfully
-2025-07-27 21:26:01,125 - INFO - MarketOrder class initialized
-2025-07-27 21:26:01,127 - INFO - Validated symbol: BTCUSDT
-2025-07-27 21:26:01,129 - INFO - Validated quantity 0.001 for BTCUSDT
-2025-07-27 21:26:01,132 - INFO - Market order placed: BTCUSDT, BUY, 0.001, Order ID: 123456789
-2025-07-27 21:26:01,133 - INFO - Market order executed: {'orderId': 123456789, 'symbol': 'BTCUSDT', 'side': 'BUY', 'executedQty': '0.001'}
-
-2025-07-27 21:26:02,234 - INFO - BinanceBot initialized successfully
-2025-07-27 21:26:02,236 - INFO - LimitOrder class initialized
-2025-07-27 21:26:02,238 - INFO - Validated symbol: BTCUSDT
-2025-07-27 21:26:02,240 - INFO - Validated quantity 0.001 for BTCUSDT
-2025-07-27 21:26:02,242 - INFO - Validated price 50000.0 for BTCUSDT
-2025-07-27 21:26:02,245 - INFO - Limit order placed: BTCUSDT, BUY, 0.001, Price: 50000.0, Order ID: 123456790
-2025-07-27 21:26:02,246 - INFO - Limit order executed: {'orderId': 123456790, 'symbol': 'BTCUSDT', 'side': 'BUY', 'price': '50000.0', 'executedQty': '0.001'}
-
-2025-07-27 21:26:03,345 - INFO - BinanceBot initialized successfully
-2025-07-27 21:26:03,347 - INFO - OCOOrder class initialized
-2025-07-27 21:26:03,349 - INFO - Validated symbol: BTCUSDT
-2025-07-27 21:26:03,351 - INFO - Validated quantity 0.001 for BTCUSDT
-2025-07-27 21:26:03,353 - INFO - Validated Limit price 50000.0 for BTCUSDT
-2025-07-27 21:26:03,355 - INFO - Validated Stop price 49000.0 for BTCUSDT
-2025-07-27 21:26:03,357 - INFO - Validated Stop-limit price 48900.0 for BTCUSDT
-2025-07-27 21:26:03,360 - INFO - OCO order placed: BTCUSDT, BUY, 0.001, Limit Price: 50000.0, Stop Price: 49000.0, Stop-Limit Price: 48900.0, OrderListId: 987654321
-2025-07-27 21:26:03,361 - INFO - OCO order executed: {'orderListId': 987654321, 'symbol': 'BTCUSDT', 'orders': [...]}
-
-2025-07-27 21:26:04,456 - INFO - BinanceBot initialized successfully
-2025-07-27 21:26:04,458 - INFO - TWAPOrder class initialized
-2025-07-27 21:26:04,460 - INFO - Validated symbol: BTCUSDT
-2025-07-27 21:26:04,462 - INFO - Validated quantity 0.005 for BTCUSDT
-2025-07-27 21:26:04,464 - INFO - Validated chunks: 5
-2025-07-27 21:26:04,466 - INFO - Validated duration: 60.0 seconds
-2025-07-27 21:26:04,468 - INFO - Validated quantity 0.001 for BTCUSDT
-2025-07-27 21:26:04,470 - INFO - Starting TWAP order: BTCUSDT, BUY, Total Quantity: 0.005, Chunks: 5, Duration: 60.0 seconds
-2025-07-27 21:26:04,473 - INFO - TWAP chunk 1/5 placed: BTCUSDT, BUY, 0.001, Order ID: 123456791
-2025-07-27 21:26:16,475 - INFO - TWAP chunk 2/5 placed: BTCUSDT, BUY, 0.001, Order ID: 123456792
-2025-07-27 21:26:28,477 - INFO - TWAP chunk 3/5 placed: BTCUSDT, BUY, 0.001, Order ID: 123456793
-2025-07-27 21:26:40,479 - INFO - TWAP chunk 4/5 placed: BTCUSDT, BUY, 0.001, Order ID: 123456794
-2025-07-27 21:26:52,481 - INFO - TWAP chunk 5/5 placed: BTCUSDT, BUY, 0.001, Order ID: 123456795
-2025-07-27 21:26:52,483 - INFO - TWAP order completed: BTCUSDT, BUY, 5 chunks executed
-2025-07-27 21:26:52,484 - INFO - TWAP order executed: 5 chunks
-
-2025-07-27 21:26:53,567 - INFO - BinanceBot initialized successfully
-2025-07-27 21:26:53,569 - INFO - GridOrder class initialized
-2025-07-27 21:26:53,571 - INFO - Validated symbol: BTCUSDT
-2025-07-27 21:26:53,573 - INFO - Validated quantity 0.005 for BTCUSDT
-2025-07-27 21:26:53,575 - INFO - Validated Lower price 45000.0 for BTCUSDT
-2025-07-27 21:26:53,577 - INFO - Validated Upper price 55000.0 for BTCUSDT
-2025-07-27 21:26:53,579 - INFO - Validated grid parameters: lower_price=45000.0, upper_price=55000.0, grid_levels=5
-2025-07-27 21:26:53,581 - INFO - Validated quantity 0.001 for BTCUSDT
-2025-07-27 21:26:53,583 - INFO - Current market price for BTCUSDT: 50000.0
-2025-07-27 21:26:53,585 - INFO - Starting grid order: BTCUSDT, Total Quantity: 0.005, Lower Price: 45000.0, Upper Price: 55000.0, Grid Levels: 5
-2025-07-27 21:26:53,588 - INFO - Grid order 1/5 placed: BTCUSDT, BUY, 0.001, Price: 45000.0, Order ID: 123456796
-2025-07-27 21:26:53,590 - INFO - Grid order 2/5 placed: BTCUSDT, BUY, 0.001, Price: 47500.0, Order ID: 123456797
-2025-07-27 21:26:53,592 - INFO - Grid order 3/5 placed: BTCUSDT, SELL, 0.001, Price: 50000.0, Order ID: 123456798
-2025-07-27 21:26:53,594 - INFO - Grid order 4/5 placed: BTCUSDT, SELL, 0.001, Price: 52500.0, Order ID: 123456799
-2025-07-27 21:26:53,596 - INFO - Grid order 5/5 placed: BTCUSDT, SELL, 0.001, Price: 55000.0, Order ID: 123456800
-2025-07-27 21:26:53,598 - INFO - Grid order completed: BTCUSDT, 5 orders placed
-2025-07-27 21:26:53,599 - INFO - Grid order executed: 5 orders
-
-2025-07-27 21:26:54,678 - INFO - BinanceBot initialized successfully
+2025-07-27 20:55:34,013 - INFO - ✅ Market BUY order placed successfully for BTCUSDT, Quantity: 0.001
+2025-07-27 21:02:44,229 - INFO - ✅ Market SELL order placed successfully for ETHUSDT, Quantity: 0.002
+2025-07-27 21:10:50,330 - INFO - ✅ Limit BUY order placed for BTCUSDT at $60000. Quantity: 0.001
+2025-07-27 21:12:12,122 - INFO - ✅ OCO Order placed: LIMIT 0.001 @ 61000 | STOP @ 59000
+2025-07-27 21:18:39,327 - INFO - ✅ TWAP Order started: Total 0.005 split into 5 parts at 5s interval
+2025-07-27 21:25:00,420 - INFO - ✅ Grid Orders placed for BTCUSDT from $27000 to $28000 in 5 grids
+2025-07-27 21:28:49,901 - INFO - ✅ Stop-limit order placed: STOP @ 27500 | LIMIT @ 27400 | Qty: 0.001
