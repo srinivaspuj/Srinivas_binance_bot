@@ -5,18 +5,24 @@ A CLI-based trading bot for Binance USDT-M Futures, designed to execute multiple
 ## Project Structure
 
 ```
-[project_root]/
-├── bot.log                  # Log file for API calls, errors, and executions
-├── main.py                  # CLI entry point for the bot
+Srinivas_binance_bot/
+├── .env
+├── bot.log
+├── README.md
+├── Report.pdf
+├── UI/
+│   └── CLI.py
 ├── src/
-│   ├── market_orders.py     # Market order logic
-│   ├── limit_orders.py      # Limit order logic
+│   ├── __pycache__/
+│   ├── bot.py
+│   ├── grid.py
+│   ├── limit_orders.py
+│   ├── market_orders.py
+│   ├── stop_limit.py
 │   └── advanced/
-│       ├── oco.py           # OCO order logic
-│       ├── twap.py          # TWAP order logic
-│       └── grid_orders.py   # Grid order logic
-├── README.md                # Project documentation
-└── report.pdf               # Analysis and screenshots (to be created)
+│       ├── oco.py
+│       └── twap.py
+
 ```
 
 ## Dependencies
