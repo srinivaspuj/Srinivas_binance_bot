@@ -1,138 +1,115 @@
-# 💹 Crypto Trading Bot
+# Binance Futures Order Bot
 
-This project is a real-time, modular, and CLI-based trading bot built to interact with the **Binance Testnet API**. It supports multiple order types, strategies, and a basic user interface. The project is structured and written for IT industry-level backend development.
+A CLI-based trading bot for Binance USDT-M Futures, designed to execute multiple order types with robust input validation and logging. This bot supports market and limit orders (mandatory) and advanced orders including OCO, TWAP, and grid orders (bonus features). It uses the Binance Testnet for all API interactions.
 
----
+## Project Structure
 
-## 📦 Features
-
-- ✅ Market Orders (Buy/Sell)
-- ✅ Limit Orders
-- ✅ Stop-Limit Orders
-- ✅ OCO (One-Cancels-the-Other) Orders
-- ✅ TWAP (Time Weighted Average Price)
-- ✅ Grid Trading Strategy
-- ✅ CLI Interface for interaction
-- ✅ Logging, error handling, and API key security
-- ✅ Final Report with screenshots and logs
-
----
-
-## 🧠 Project Structure
-
-Srinivas_binance_bot/
-│
+```
+[project_root]/
+├── bot.log                  # Log file for API calls, errors, and executions
+├── main.py                  # CLI entry point for the bot
 ├── src/
-│ ├── market_orders.py # Place market buy/sell orders
-│ ├── limit_orders.py # Place limit buy/sell orders
-│ ├── grid.py # Grid strategy logic
-│ ├── stop_limit.py # Stop-limit functionality
-│ ├── bot.py # Main runner
-│ └── advanced/
-│ ├── oco.py # OCO logic
-│ └── twap.py # TWAP order logic
-│
-├── ui/
-│ └── cli_ui.py # CLI interface for user input
-│
-├── .env # API key/secret (secure)
-├── bot.log # Logs of activities/errors
-├── report.pdf # Documentation with screenshots
-└── README.md # This file
+│   ├── market_orders.py     # Market order logic
+│   ├── limit_orders.py      # Limit order logic
+│   └── advanced/
+│       ├── oco.py           # OCO order logic
+│       ├── twap.py          # TWAP order logic
+│       └── grid_orders.py   # Grid order logic
+├── README.md                # Project documentation
+└── report.pdf               # Analysis and screenshots (to be created)
+```
 
-yaml
-Copy
-Edit
+## Dependencies
 
----
+- Python 3.8+
+- `python-binance` library (`pip install python-binance`)
 
-## 🔐 Setup Instructions
+## Setup Instructions
 
-### 1. Clone the Repo
+1. **Install Python**: Ensure Python 3.8 or higher is installed on your system.
+2. **Install Dependencies**:
+   ```bash
+   pip install python-binance
+   ```
+3. **Register for Binance Testnet**:
+   - Create an account at [Binance Testnet](https://testnet.binance.vision/).
+   - Generate API key and secret.
+4. **Clone the Repository**:
+   - If using GitHub, clone the private repository named `[your_name]-binance-bot`.
+   - Alternatively, unzip `[your_name]_binance_bot.zip` to access the project files.
+5. **Set Up Project Structure**:
+   - Ensure all files are placed as shown in the project structure above.
+   - The `bot.log` file will be created automatically when the bot runs.
+
+## Usage
+
+Run the bot using the `main.py` script via the command line. The bot supports market, limit, OCO, TWAP, and grid orders. Below are the command-line arguments and examples.
+
+### Command-Line Arguments
+
 ```bash
-git clone <your-repo-url>
-cd Srinivas_binance_bot
-2. Install Dependencies
-bash
-Copy
-Edit
-pip install python-binance python-dotenv
-3. Configure API Keys
-Create a .env file in the root folder:
+python main.py --api-key <API_KEY> --api-secret <API_SECRET> --symbol <SYMBOL> --order-type <TYPE> --side <SIDE> --quantity <QUANTITY> [--price <PRICE>] [--stop-price <STOP_PRICE>] [--stop-limit-price <STOP_LIMIT_PRICE>] [--duration <DURATION>] [--chunks <CHUNKS>] [--lower-price <LOWER_PRICE>] [--upper-price <UPPER_PRICE>] [--grid-levels <GRID_LEVELS>]
+```
 
-env
-Copy
-Edit
-API_KEY=your_binance_testnet_api_key
-API_SECRET=your_binance_testnet_api_secret
-🔐 These keys are Testnet-only and do not affect real assets.
+- `--api-key`: Binance Testnet API key (required).
+- `--api-secret`: Binance Testnet API secret (required).
+- `--symbol`: Trading pair (e.g., `BTCUSDT`) (required).
+- `--order-type`: Order type (`market`, `limit`, `oco`, `twap`, `grid`) (required).
+- `--side`: Order side (`BUY` or `SELL`) (required).
+- `--quantity`: Total order quantity (required).
+- `--price`: Limit price for `limit` or `oco` orders (optional).
+- `--stop-price`: Stop price for `oco` orders (optional).
+- `--stop-limit-price`: Stop-limit price for `oco` orders (optional).
+- `--duration`: Duration in seconds for `twap` orders (optional).
+- `--chunks`: Number of chunks for `twap` orders (optional).
+- `--lower-price`: Lower price bound for `grid` orders (optional).
+- `--upper-price`: Upper price bound for `grid` orders (optional).
+- `--grid-levels`: Number of grid levels for `grid` orders (optional).
 
-🚀 Running the Bot
-Use the CLI to interact with the bot:
+### Examples
 
-bash
-Copy
-Edit
-python ui/cli_ui.py
-Then follow the prompt to select the order type:
+1. **Market Order**:
+   ```bash
+   python main.py --api-key your_key --api-secret your_secret --symbol BTCUSDT --order-type market --side BUY --quantity 0.001
+   ```
+   Places a market buy order for 0.001 BTCUSDT.
 
-mathematica
-Copy
-Edit
-Choose an option:
-1. Market Order
-2. Limit Order
-3. Stop-Limit Order
-4. OCO Order
-5. TWAP Strategy
-6. Grid Trading Strategy
-📸 Report & Logs
-report.pdf contains screenshots, API calls, order confirmations, and error handling examples.
+2. **Limit Order**:
+   ```bash
+   python main.py --api-key your_key --api-secret your_secret --symbol BTCUSDT --order-type limit --side BUY --quantity 0.001 --price 50000.0
+   ```
+   Places a limit buy order for 0.001 BTCUSDT at 50,000 USDT.
 
-bot.log includes all raw logs of trading attempts and responses for audit.
+3. **OCO Order**:
+   ```bash
+   python main.py --api-key your_key --api-secret your_secret --symbol BTCUSDT --order-type oco --side BUY --quantity 0.001 --price 50000.0 --stop-price 49000.0 --stop-limit-price 48900.0
+   ```
+   Places an OCO buy order with a limit price of 50,000 USDT, stop price of 49,000 USDT, and stop-limit price of 48,900 USDT.
 
-📘 Example Order Log
-pgsql
-Copy
-Edit
-[INFO] 2025-07-27 12:04:01 - Placed MARKET BUY order for BTCUSDT at 100.00 USDT
-[INFO] 2025-07-27 12:05:10 - TWAP order triggered: 5 chunks of 0.001 BTC every 5s
-🛠️ Built With
-Python 3.10+
+4. **TWAP Order**:
+   ```bash
+   python main.py --api-key your_key --api-secret your_secret --symbol BTCUSDT --order-type twap --side BUY --quantity 0.005 --duration 60 --chunks 5
+   ```
+   Places a TWAP buy order for 0.005 BTCUSDT, split into 5 market orders over 60 seconds.
 
-python-binance
+5. **Grid Order**:
+   ```bash
+   python main.py --api-key your_key --api-secret your_secret --symbol BTCUSDT --order-type grid --quantity 0.005 --lower-price 45000.0 --upper-price 55000.0 --grid-levels 5
+   ```
+   Places a grid of 5 limit orders for 0.005 BTCUSDT, distributed between 45,000 and 55,000 USDT.
 
-dotenv
+### Logging
 
-Logging, CLI, REST API, and Real-time order simulation
+All actions (initialization, validation, order placement, and errors) are logged to `bot.log` in the project root with timestamps. Check this file for debugging or monitoring order execution.
 
-📈 Future Improvements
-Web dashboard using Flask/React
+### Notes
 
-Telegram alerts on order execution
+- Ensure quantities and prices comply with Binance's `LOT_SIZE` and `PRICE_FILTER` for the specified symbol.
+- Use the Binance Testnet API (https://testnet.binance.vision/) for all interactions.
+- For GitHub submission, push the code to a private repository named `[your_name]-binance-bot` and add the instructor as a collaborator.
 
-DB integration (MongoDB/PostgreSQL)
+### Troubleshooting
 
-Backtesting module for strategies
-
-👤 Author
-Pujala Srinivas
-MTech in Computer Science | Backend Developer
-📧 Email: [YourEmail@example.com]
-📎 Resume: [Resume Link]
-
-📜 License
-MIT License. For educational and demo use on Binance Testnet only.
-
-yaml
-Copy
-Edit
-
----
-
-Let me know if you want:
-- A **ZIP file** of the full project
-- **Screenshots** added to the README
-- An **auto-run script** for first-time setup
-
-Ready for submission! ✅
+- **Invalid Symbol/Quantity/Price**: Check `bot.log` for validation errors and ensure inputs meet Binance's symbol filters.
+- **API Errors**: Verify API key and secret, and ensure Testnet mode is enabled.
+- **Missing Dependencies**: Install `python-binance` using pip.
